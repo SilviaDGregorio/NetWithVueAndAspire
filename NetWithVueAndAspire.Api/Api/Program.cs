@@ -16,6 +16,9 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+// Serve files in wwwroot (so /images/sample1.jpg is available when added to Api/wwwroot/images)
+app.UseStaticFiles();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

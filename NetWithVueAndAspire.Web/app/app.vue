@@ -1,7 +1,5 @@
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-    <WeatherForecasts />
+    <Images />
   </div>
 </template>

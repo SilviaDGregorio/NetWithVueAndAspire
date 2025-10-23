@@ -14,4 +14,8 @@
     <ProjectReference Include="..\..\NetWithVueAndAspire.ServiceDefaults\NetWithVueAndAspire.ServiceDefaults.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>
