@@ -1,0 +1,32 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: NetWithVueAndAspire.Api/Api/Dockerfile
+    image: netwithvueandaspire_api:latest
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    ports:
+      - "8080:8080"
+    networks:
+      - appnet
+
+  web:
+    build:
+      context: ./NetWithVueAndAspire.Web
+      dockerfile: Dockerfile
+    image: netwithvueandaspire_web:latest
+    environment:
+      - NUXT_PUBLIC_ApiUrl=http://api:8080
+      - PORT=7212
+    ports:
+      - "3000:7212"
+    depends_on:
+      - api
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge

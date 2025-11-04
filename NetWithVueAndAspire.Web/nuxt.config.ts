@@ -2,11 +2,10 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  $development: {
-    routeRules: {
-      '/api/**': {
-        proxy: `${import.meta.env.ApiUrl}/**`,
-      }
+
+  routeRules: {
+    '/api/**': {
+      proxy: `${process.env.NUXT_PUBLIC_ApiUrl ?? 'http://api:8080'}/**`,
     }
   }
 })

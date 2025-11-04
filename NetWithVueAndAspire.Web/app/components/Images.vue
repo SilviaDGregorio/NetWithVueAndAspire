@@ -4,12 +4,12 @@
 interface ImageItem { url: string; description: string; }
 
 const { data: images } = await useFetch<ImageItem[]>('/api/images');
+
 </script>
 
 <template>
   <div class="page-images">
-    <h1>Images</h1>
-
+    <h1>Embroidery patterns</h1>
     <div v-if="pending">Loading…</div>
     <div v-else-if="error">
       <p>Error loading images: {{ error.message || error }}</p>
